@@ -4,6 +4,7 @@ A simple BF4 Externnal cheat base  in C++ for beginners.
 ## Features
 
 * ESP Line
+* No Recoil, No Spread
 
 ## ToDo :
 
