@@ -3,7 +3,7 @@ A simple BF4 Externnal cheat base  in C++ for beginners.
 
 ## Features
 
-* ESP Line
+* ESP Line (Soldier Only)
 * No Recoil, No Spread
 
 ## How to use
