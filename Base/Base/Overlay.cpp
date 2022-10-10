@@ -74,7 +74,7 @@ void Overlay::ESP()
     ImGui::SetNextWindowSize(ImVec2(1920, 1080)); // ToDo : Set your screen size
     ImGui::Begin("##ESP", (bool*)NULL, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoInputs);
 
-    // ƒI[ƒo[ƒŒƒC‚ÌƒtƒŒ[ƒ€ƒŒ[ƒg‚ğæ“¾
+    // ã‚ªãƒ¼ãƒãƒ¼ãƒ¬ã‚¤ã®ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ¬ãƒ¼ãƒˆã‚’å–å¾—
     ImGui::Text("%.1f FPS (%.2f ms)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
 
     // Read Player Data
@@ -129,7 +129,7 @@ void Overlay::ESP()
         if (!IsValid(hp_tmp))
             continue;
         ReadProcessMemory(pHandle, (void*)(hp_tmp + 0x20), &Health, sizeof(float), NULL);
-        if (Health < 0.00f || Health < 100)
+        if (Health < 0)
             continue;
 
         // VisCheck
