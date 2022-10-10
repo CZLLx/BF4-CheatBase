@@ -4,7 +4,6 @@ A simple BF4 Externnal cheat base  in C++.
 ## Features
 
 * ESP
-* Menu
 
 ## ToDo :
 
