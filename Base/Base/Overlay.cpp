@@ -37,11 +37,7 @@ void Overlay::Menu()
 
     ImGui::BulletText("GunMod");
 
-    ImGui::Checkbox("No Recoil & Spread", &cfg.GunSway); // add it yourself
-    //-If it works, remove------------------------//
-    ImGui::SameLine();
-    ImGui::TextColored(RED, "(Add it yourself)");
-    //--------------------------------------------//
+    ImGui::Checkbox("No Recoil & Spread", &cfg.GunSway);
 
     ImGui::NewLine();
 
@@ -74,7 +70,7 @@ void Overlay::ESP()
     ImGui::SetNextWindowSize(ImVec2(1920, 1080)); // ToDo : Set your screen size
     ImGui::Begin("##ESP", (bool*)NULL, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoInputs);
 
-    // „Ç™„Éº„Éê„Éº„É¨„Ç§„ÅÆ„Éï„É¨„Éº„É†„É¨„Éº„Éà„ÇíÂèñÂæó
+    // ÉIÅ[ÉoÅ[ÉåÉCÇÃÉtÉåÅ[ÉÄÉåÅ[ÉgÇéÊìæ
     ImGui::Text("%.1f FPS (%.2f ms)", ImGui::GetIO().Framerate, 1000.0f / ImGui::GetIO().Framerate);
 
     // Read Player Data
@@ -100,8 +96,6 @@ void Overlay::ESP()
     ReadProcessMemory(pHandle, (void*)(LocalPlayer + 0x14D0), &lp_tmp, sizeof(DWORD_PTR), NULL);
     ReadProcessMemory(pHandle, (void*)(LocalPlayer + 0x490), &lp_tmp, sizeof(DWORD_PTR), NULL);
     ReadProcessMemory(pHandle, (void*)(lp_tmp+ 0x30), &LocalPlayerPos, sizeof(D3DXVECTOR3), NULL);
-
-    int count = 0;
 
     // ESP Loop
     for (int i = 0; i < 75; i++)
@@ -162,7 +156,6 @@ void Overlay::ESP()
         {
             DrawLine(ImVec2(1920 / 2, 1080), ImVec2(PlayerScreenPos.x, PlayerScreenPos.y), ESP_Normal, 1);
         }
-        
     }
 
     ImGui::End();
