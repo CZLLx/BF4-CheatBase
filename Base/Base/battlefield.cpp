@@ -37,6 +37,6 @@ void battlefield::SyncBFSettingMod()
 	{
 		DWORD_PTR SyncBFSetting = 0;
 		ReadProcessMemory(pHandle, (void*)(OFFSET_SYNCBFSETTING), &SyncBFSetting, sizeof(DWORD_PTR), NULL);
-		WriteProcessMemory(pHandle, (void*)(SyncBFSetting + 0x54), &w_GunSway, sizeof(BYTE), NULL);
+		WriteProcessMemory(pHandle, (void*)(SyncBFSetting + 0x54), &Enable, sizeof(BYTE), NULL);
 	}
 }
