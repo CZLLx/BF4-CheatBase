@@ -1,12 +1,16 @@
-﻿#include <iostream>
+#include <iostream>
 #include "battlefield.h"
 
 /* 
 	Battlefield 4 external cheat BASE.
-	(some of the Japanese lang is because i am Japanese..)
 
+	[ Note ]
+	・今回はint main() 使ってますけど、普通にWINAPI WinMainでも大丈夫です。
+	・ReadProcessMemoryをESPの関数で呼び出しているので必然的にESPのパフォーマンスが落ちます。(144Hzモニターでプレイしても快適でしたが、、)
+	　プレイヤーの情報を取得する関数を作って、そこで取得した情報を構造体に入れてESP関数をレンダリング専用にするという手もあります。(自分はそうしてます)
+	　まあどちらにせよESP等のレンダリングする関数内でRPMを呼び出すのはパフォーマンス的に良くはないよねっていう、
+	
 	[ Credit ] 
-
 	 - ImGui
 	https://github.com/ocornut/imgui
 	 - BF4 offset, pointer and more
