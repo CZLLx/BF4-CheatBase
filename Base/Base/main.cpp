@@ -44,21 +44,20 @@ void CheatFunctions()
 {
 	while (cfg.Active)
 	{
-		BF.GunMod();			// Example : No Recoil, No Spread
-		BF.SyncBFSettingMod();	// Example : UnlockAll
-
-		if (!cfg.Active)
-			ExitThread(0);
+		BF.GunMod();		// No Recoil, No Spread
+		BF.SyncBFSettingMod();	// UnlockAll
 
 		Sleep(100); // if you need
 	}
+	
+	ExitThread(0);
 }
 
 // Menu
 void Menu()
 {
     // Create ImGui Window
-    ImGui::Begin("BF4 Base", (bool*)NULL, ImGuiWindowFlags_AlwaysAutoResize);
+    ImGui::Begin("Battlefield 4", (bool*)NULL, ImGuiWindowFlags_AlwaysAutoResize);
 
     ImGui::BulletText("GunMod");
 
@@ -111,7 +110,7 @@ void ESP()
     ReadProcessMemory(pHandle, (void*)(lp_tmp + 0x30), &LocalPlayerPos, sizeof(D3DXVECTOR3), NULL);
 
     // ESP Loop
-    for (int i = 0; i < 75; i++)
+    for (int i = 0; i < 70; i++)
     {
         DWORD_PTR Soldier = 0;
         DWORD_PTR hp_tmp = 0;
@@ -288,8 +287,8 @@ int main()
         g_pd3dDeviceContext->ClearRenderTargetView(g_mainRenderTargetView, clear_color_with_alpha);
         ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 
-        g_pSwapChain->Present(1, 0);
-        // g_pSwapChain->Present(0, 0);
+        g_pSwapChain->Present(1, 0);	// vsync off
+        // g_pSwapChain->Present(0, 0); vsync on
     }
 
     ImGui_ImplDX11_Shutdown();
