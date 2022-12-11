@@ -11,7 +11,7 @@ A simple BF4 Externnal cheat base in C++ for beginners.
 
 ## How to use
 1. Install VisualStudio
-2. DirectX SDK Jun10
+2. Install DirectX SDK Jun10
 3. Compile (Release + x64)
 4. Protect from PunkBuster (VMProtect, Themidaなど)
 5. Run
