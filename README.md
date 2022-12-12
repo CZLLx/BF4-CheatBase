@@ -1,5 +1,5 @@
 # BF4-CheatBase
-A simple BF4 Externnal cheat base in C++ for beginners.
+A simple BF4 Externnal cheat base in C++ for beginners.  
 僕が最初に書いたチートからいろいろ機能を削減してコードを多少改善しました。
 
 ※これは外部チートなのでスクリーンショットに対するバイパスは不要です。  
